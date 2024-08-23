@@ -5,7 +5,7 @@ export const LoginPage = () => {
     const dataFromForm = useActionData()
 
     return (
-        <div className="container col-lg-6 col-md-6 col-sm p-5 rounded pill bg-dark text-center mt-4 justify-content-center">
+        <div className="container col-lg-6 col-md-6 col-sm p-5 rounded pill bg-dark text-center mt-4 mb-5 justify-content-center">
             <h1 className="fst-italic text-light display-5 mb-5">Login Form</h1>
             <Form method="POST" action="/login">
                 <div class="">
@@ -16,7 +16,7 @@ export const LoginPage = () => {
                         <input type="password" class="form-control" name="password" placeholder="Password"/>
                     </div>
                     <p class="text-light">Havent got account yet ? <Link to="/register">Click here!</Link> </p>
-                    {dataFromForm && dataFromForm.error && <p>{dataFromForm.error}</p>}
+                    {dataFromForm && dataFromForm.error && <p class="text-light">{dataFromForm.error}</p>}
                     <button className="btn btn-light col-lg-3 col-md-5 col-sm-5 fs-5">
                         Submit
                     </button>

@@ -43,10 +43,10 @@ export const HomeLayout = () => {
                             <NavLink to="/" className="nav-link ms-3">Home Page</NavLink>
                         </li>
                         <li class="nav-item">
-                            {currentUserData.isLogged ? <Link to="/logOut" className="nav-link ms-3">Log out</Link> : <NavLink to="/register" className="nav-link ms-3">Sign Up</NavLink>}
+                            {currentUserData.isLogged ? <Link to="/newPost" className="nav-link ms-3">Create New Post</Link>: <NavLink to="/register" className="nav-link ms-3">Sign Up</NavLink>}
                         </li>
                         <li class="nav-item">
-                            {currentUserData.isLogged ? "" : <NavLink to="/login" className="nav-link ms-3">Sign In</NavLink>}
+                            {currentUserData.isLogged ? <Link to="/logOut" className="nav-link ms-3">Log Out</Link> : <NavLink to="/login" className="nav-link ms-3">Sign In</NavLink>}
                         </li>
                     </ul>
                 </div>

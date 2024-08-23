@@ -13,7 +13,7 @@ export const PostDetails = () => {
                     {postInfo.title}
                 </h1>
                 <p className="fst-italic">Author {postInfo.authorName}</p>
-                <div className="text-start mt-5 p-3 fs-5 border border-5 border-dark">
+                <div className="text-start mt-5 mb-5 p-3 fs-5 border border-5 border-dark">
                     {postInfo.mainText}
                 </div>
             </div>

@@ -4,7 +4,7 @@ export const RegisterPage = () => {
     const dataFromForm = useActionData()
 
     return (
-        <div className="container col-lg-6 col-md-12 rounded pill bg-dark text-center mt-4 p-4 justify-content-center">
+        <div className="container col-lg-6 col-md-12 rounded pill bg-dark text-center mt-4 mb-5 p-4 justify-content-center">
             <h1 className="fst-italic text-light display-5 mb-4">Register Form</h1>
             <Form method="POST" action="/register">
                 <div class="">

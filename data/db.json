@@ -1,22 +1,13 @@
 {
   "keyPhrase": {
-    "keyPhrase": ""
+    "keyPhrase": "Oskar"
   },
   "currentUser": {
     "personID": "",
     "isLogged": false,
     "isAdmin": false
   },
-  "posts": [
-    {
-      "id": "1",
-      "title": "Pierwszy",
-      "shortText": "nothing",
-      "authorID": "6fdea2a2-ca3d-47a5-ae24-6f19e0d1d07a",
-      "authorName": "Oskar",
-      "mainText": "Dzisiaj cos zrobilem i postanowilem zadac pytanie"
-    }
-  ],
+  "posts": [],
   "users": [
     {
       "id": "6fdea2a2-ca3d-47a5-ae24-6f19e0d1d07a",
