@@ -14,8 +14,31 @@
       "login": "Oskar",
       "password": "root",
       "isAdmin": true
+    },
+    {
+      "id": "cdec7ec2-b5af-4e6f-8653-624cd7b3a4b2",
+      "login": "Robert",
+      "password": "root",
+      "isAdmin": false
     }
   ],
-  "archievedPosts": [],
-  "comments": []
+  "archievedPosts": [
+    {
+      "id": "82781c44-fad2-4c05-b99b-ebba363ee8e5",
+      "title": "Moj pierwszy post",
+      "shortText": "hej siemka!",
+      "authorID": "cdec7ec2-b5af-4e6f-8653-624cd7b3a4b2",
+      "authorName": "Robert",
+      "mainText": "tutaj "
+    }
+  ],
+  "comments": [
+    {
+      "id": "1ed1ace8-edd9-40fa-a23e-56a5e754e81b",
+      "authorID": "cdec7ec2-b5af-4e6f-8653-624cd7b3a4b2",
+      "message": "dasdas",
+      "postID": "82781c44-fad2-4c05-b99b-ebba363ee8e5",
+      "data": "2024-08-23T17:38:57.446Z"
+    }
+  ]
 }

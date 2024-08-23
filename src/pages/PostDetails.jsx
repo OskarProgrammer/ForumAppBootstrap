@@ -103,7 +103,7 @@ export const PostDetails = () => {
                     <h3>{comment.authorName}</h3>
                     <div className="mb-2 mt-2 pb-2 pt-2">{comment.message}</div>
                     <p>From day: {new Date(comment.data).getDate()}.{new Date(comment.data).getMonth()+1}.{new Date(comment.data).getFullYear()}</p>
-                    {isAdmin ? <button className="btn btn-danger btn-lg" onClick={()=>{removeComment(comment)}}>Remove</button> : ""}
+                    {isAdmin && !postInfo.isArchieved? <button className="btn btn-danger btn-lg" onClick={()=>{removeComment(comment)}}>Remove</button> : ""}
                 </div>)
             ))}
 
