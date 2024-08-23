@@ -1,0 +1,43 @@
+{
+    "posts": [
+        {
+            "id":"222",
+            "title":"Pierwszy",
+            "shortText": "nothing",
+            "authorID": "22",
+            "authorName":"Oskar",
+            "mainText": "Dzisiaj cos zrobilem i postanowilem zadac pytanie"
+        },
+        {
+            "id":"1",
+            "title":"Pierwszy",
+            "shortText": "nothing",
+            "authorID": "22",
+            "authorName":"Oskar",
+            "mainText": "Dzisiaj cos zrobilem i postanowilem zadac pytanie"
+        },
+        {
+            "id":"222132",
+            "title":"s",
+            "shortText": "nothing",
+            "authorID": "22",
+            "authorName":"Oskar",
+            "mainText": "Dzisiaj cos zrobilem i postanowilem zadac pytanie"
+        },{
+            "id":"223122",
+            "title":"Pierwszy",
+            "shortText": "nothing",
+            "authorID": "22",
+            "authorName":"Oskar",
+            "mainText": "Dzisiaj cos zrobilem i postanowilem zadac pytanie"
+        },{
+            "id":"1213",
+            "title":"Pierwszy",
+            "shortText": "nothing",
+            "authorID": "22",
+            "authorName":"Oskar",
+            "mainText": "Dzisiaj cos zrobilem i postanowilem zadac pytanie"
+        }
+    ]
+
+}
