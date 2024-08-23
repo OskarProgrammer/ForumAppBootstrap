@@ -17,6 +17,7 @@ import { PostDetails, postDetailsLoader } from './pages/PostDetails';
 import { ErrorsPage } from './pages/ErrorsPage';
 import { logOutLoader, LogOutPage } from "./pages/LogOutPage"
 import { newPostAction, NewPostPage } from './pages/NewPostPage';
+import { UsersPosts, usersPostsLoader } from './pages/UsersPosts';
 
 
 const router = createBrowserRouter(
@@ -28,6 +29,7 @@ const router = createBrowserRouter(
         <Route path="/posts/:id" loader={postDetailsLoader} element={<PostDetails/>}/>
         <Route path="/logOut" loader={logOutLoader} element={<LogOutPage/>}/>
         <Route path="/newPost" element={<NewPostPage/>} action={newPostAction}/>
+        <Route path="/yourPosts" element={<UsersPosts/>} loader={usersPostsLoader}/>
     </Route>
   )
 )

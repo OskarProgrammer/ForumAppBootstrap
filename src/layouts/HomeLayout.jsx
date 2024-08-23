@@ -26,7 +26,7 @@ export const HomeLayout = () => {
             throw Error("Error during putting the data")
         }
         setKeyPhrase("")
-        return redirect(".")
+        return redirect()
     }
 
 
@@ -46,7 +46,10 @@ export const HomeLayout = () => {
                             {currentUserData.isLogged ? <Link to="/newPost" className="nav-link ms-3">Create New Post</Link>: <NavLink to="/register" className="nav-link ms-3">Sign Up</NavLink>}
                         </li>
                         <li class="nav-item">
-                            {currentUserData.isLogged ? <Link to="/logOut" className="nav-link ms-3">Log Out</Link> : <NavLink to="/login" className="nav-link ms-3">Sign In</NavLink>}
+                            {currentUserData.isLogged ? <Link to="/yourPosts" className="nav-link ms-3">Your Posts</Link> : <NavLink to="/login" className="nav-link ms-3">Sign In</NavLink>}
+                        </li>
+                        <li class="nav-item">
+                            {currentUserData.isLogged ? <Link to="/logOut" className="nav-link ms-3">Log Out</Link> : ""}
                         </li>
                     </ul>
                 </div>

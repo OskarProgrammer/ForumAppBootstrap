@@ -7,7 +7,7 @@ export const PostDetails = () => {
 
     return (
         <div className="container-lg text-center mt-5">
-            <h1 className="display-1 fw-bolder fst-italic">Post {id}</h1>
+            <h1 className="display-1 fw-bolder fst-italic">Post {id} {postInfo.isArchieved ? "(ARCHIEVED POST)": ""}</h1>
             <div className="container">
                 <h1 className="display-4 fst-italic mt-5">
                     {postInfo.title}
@@ -24,11 +24,25 @@ export const PostDetails = () => {
 export const postDetailsLoader = async ({params}) => {
     const {id} = params
     let postInfo = {}
+    let isActual = false
     
     try {
         postInfo = await fetchFromEndpointID("http://localhost:3000/posts/",id)
+        isActual = true
     }catch {
-        throw Error("Not found the post")
+        isActual = false
+    }
+
+    if (!isActual){
+        try {
+            postInfo = await fetchFromEndpointID("http://localhost:3000/archievedPosts/",id)
+        } catch {
+            throw Error("Not found the post")
+        }
+    }
+
+    if (!isActual) {
+        postInfo.isArchieved = true
     }
 
     return postInfo
