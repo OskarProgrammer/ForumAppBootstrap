@@ -1,9 +1,34 @@
-import { Link, NavLink, Outlet } from "react-router-dom"
+import { Form, Link, NavLink, Outlet, redirect, useLoaderData, useNavigate } from "react-router-dom"
+import { useEffect, useState } from "react"
+import { fetchFromEndpoint} from "../API functions/functions"
 import "bootstrap"
 import "./HomeLayout.css"
 
 
 export const HomeLayout = () => {
+    const [keyPhrase, setKeyPhrase] = useState("")
+    const currentUserData = useLoaderData()
+
+    const sendKeyPhrase = async () => {
+        const newKeyPhrase = {
+            "keyPhrase": keyPhrase
+        }
+
+        const requestOptions = {
+            method: "PUT",
+            headers: { "Content-Type": "application/json" },
+            body: JSON.stringify(newKeyPhrase)
+        }
+
+        try {
+            await fetch("http://localhost:3000/keyPhrase/",requestOptions)
+        }catch {
+            throw Error("Error during putting the data")
+        }
+        setKeyPhrase("")
+        return redirect(".")
+    }
+
 
     return (
         <div className="home-layout">
@@ -18,17 +43,35 @@ export const HomeLayout = () => {
                             <NavLink to="/" className="nav-link ms-3">Home Page</NavLink>
                         </li>
                         <li class="nav-item">
-                            <NavLink to="/register" className="nav-link ms-3">Sign Up</NavLink>
+                            {currentUserData.isLogged ? <Link to="/logOut" className="nav-link ms-3">Log out</Link> : <NavLink to="/register" className="nav-link ms-3">Sign Up</NavLink>}
                         </li>
                         <li class="nav-item">
-                            <NavLink to="/login" className="nav-link btn ms-3">Sign In</NavLink>
+                            {currentUserData.isLogged ? "" : <NavLink to="/login" className="nav-link ms-3">Sign In</NavLink>}
                         </li>
                     </ul>
                 </div>
             </nav>
+
+            <div className="container-lg mt-4 text-center text-light p-3">
+                    <Form class="form-inline row me-1" put="post" action={"/"}>
+                        <div class="col-lg-10 col-md-9 col-sm-10 me-sm-0">
+                            <input class="form-control border-dark" type="search" onChange={(e)=>{setKeyPhrase(e.target.value)}} value={keyPhrase} placeholder="Search" aria-label="Search"/>
+                        </div>
+                        
+                        <button class="btn btn-outline-success col-lg-2 col-md-3 col-sm-2" onClick={()=>{sendKeyPhrase()}}>Search</button>
+                    </Form>
+            </div>
+
+
             <main>
                 <Outlet/>
             </main>
         </div>
     )
+}
+
+export const homeLayoutLoader = async () => {
+    const currentUser = await fetchFromEndpoint("http://localhost:3000/currentUser")
+
+    return currentUser
 }
