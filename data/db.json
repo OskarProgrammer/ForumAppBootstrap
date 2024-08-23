@@ -3,52 +3,19 @@
     "keyPhrase": ""
   },
   "currentUser": {
-    "personID": "6fdea2a2-ca3d-47a5-ae24-6f19e0d1d07a",
-    "isLogged": true,
+    "personID": "",
+    "isLogged": false,
     "isAdmin": false
   },
-  "posts": [
-    {
-      "id": "3c263b6a-a41a-4e76-ba23-b770a99e7898",
-      "title": "S",
-      "shortText": "S",
-      "authorID": "6fdea2a2-ca3d-47a5-ae24-6f19e0d1d07a",
-      "authorName": "Oskar",
-      "mainText": "S"
-    }
-  ],
+  "posts": [],
   "users": [
     {
       "id": "6fdea2a2-ca3d-47a5-ae24-6f19e0d1d07a",
       "login": "Oskar",
       "password": "root",
-      "isAdmin": false
+      "isAdmin": true
     }
   ],
-  "archievedPosts": [
-    {
-      "id": "5e573500-2d06-43ed-ab7e-631d8c0a0536",
-      "title": "d",
-      "shortText": "d",
-      "authorID": "6fdea2a2-ca3d-47a5-ae24-6f19e0d1d07a",
-      "authorName": "Oskar",
-      "mainText": "d"
-    },
-    {
-      "id": "29c9e7af-9053-4b44-8925-af41f534a504",
-      "title": "d",
-      "shortText": "d",
-      "authorID": "6fdea2a2-ca3d-47a5-ae24-6f19e0d1d07a",
-      "authorName": "Oskar",
-      "mainText": "d"
-    },
-    {
-      "id": "10d06805-d396-4b3b-ac77-7eba6d04b859",
-      "title": "d",
-      "shortText": "d",
-      "authorID": "6fdea2a2-ca3d-47a5-ae24-6f19e0d1d07a",
-      "authorName": "Oskar",
-      "mainText": "d"
-    }
-  ]
+  "archievedPosts": [],
+  "comments": []
 }

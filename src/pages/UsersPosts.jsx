@@ -3,7 +3,7 @@ import { fetchFromEndpoint, fetchFromEndpointID } from "../API functions/functio
 import { useEffect, useState } from "react"
 
 export const UsersPosts = () => {
-    const [usersPosts, keyPhrase,archievedPosts] = useLoaderData()
+    const [usersPosts, keyPhrase, archievedPosts] = useLoaderData()
     let [posts, setPosts] = useState(usersPosts)
     const navigate = useNavigate()
 
@@ -84,7 +84,6 @@ export const UsersPosts = () => {
                         <p>{post.shortText}</p>
                         <p>{post.id}</p>
                         <Link to={`/posts/${post.id}`} className="btn btn-primary me-3 col-lg-1">Read</Link>
-                        <button onClick={()=>{removePost(post.id)}}className="btn btn-danger col-lg-1">Remove</button>
                     </div>  )
                 } else if (keyPhrase !== "" && (keyPhrase == post.title || keyPhrase == post.id || keyPhrase.toLowerCase() == "archieved")){
                     return (<div className="container bg-dark text-light p-2 m-4 rounded pill col-lg-10 m-auto mb-4 mt-4">
@@ -92,7 +91,6 @@ export const UsersPosts = () => {
                         <p>{post.shortText}</p>
                         <p>{post.id}</p>
                         <Link to={`/posts/${post.id}`} className="btn btn-primary me-3 col-lg-1">Read</Link>
-                        <button onClick={()=>{removePost(post.id)}}className="btn btn-danger col-lg-1">Remove</button>
                     </div>)
                 }else{ 
                     return ""
@@ -109,6 +107,7 @@ export const usersPostsLoader = async() => {
     const archievedPosts = await fetchFromEndpoint("http://localhost:3000/archievedPosts")
     const {keyPhrase} = await fetchFromEndpoint("http://localhost:3000/keyPhrase")
     let usersPosts = []
+    let archievedPostsOfUser = []
 
     posts.map((post)=>{
         if (post.authorID == personID) {
@@ -116,6 +115,12 @@ export const usersPostsLoader = async() => {
         }
     })
 
+    archievedPosts.map((post)=>{
+        if (post.authorID == personID){
+            archievedPostsOfUser.push(post)
+        }
+    })
 
-    return [usersPosts, keyPhrase, archievedPosts]
+
+    return [usersPosts, keyPhrase, archievedPostsOfUser]
 }
